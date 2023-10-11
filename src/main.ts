@@ -11,10 +11,10 @@ let score = 0
 SetText("click to start!")
 
 
-var isJumping = false
-let gameOver = true
+let isJumping: boolean = false
+let gameOver: boolean = true
 
-document.addEventListener('click', () => jump())
+document.addEventListener('click', jump)
 
 
 setInterval(function () { Main()}, 10)
@@ -28,19 +28,17 @@ function Main()
 
         CheckGameOver()
     }
+
 }
 
 
 function jump()
 {
-    if(gameOver === false)
+    if(!gameOver && !isJumping)
     {
-        if(isJumping == false)
-        {
-            isJumping = true
-            dino?.classList.add("jump")
-            setTimeout(RemoveJump, 500)
-        }
+        isJumping = true
+        dino?.classList.add("jump")
+        setTimeout(RemoveJump, 500)
     }
     else
     {
