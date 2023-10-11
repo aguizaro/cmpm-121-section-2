@@ -14,7 +14,7 @@ SetText("click to start!")
 let isJumping: boolean = false
 let gameOver: boolean = true
 
-document.addEventListener('click', jump)
+document.addEventListener('mousedown', jump)
 
 
 setInterval(function () { update()}, 10)
